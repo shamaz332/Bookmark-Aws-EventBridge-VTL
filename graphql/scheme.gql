@@ -1,0 +1,23 @@
+type Bookmark {
+  id: ID!
+  name: String!
+  url: String!
+  description: String!
+}
+type Event {
+  result: String
+}
+input BookmarkInput {
+  id: ID
+  name: String
+  url: String
+  description: String
+}
+type Query {
+  listBookmark: [Bookmark]
+}
+
+type Mutation {
+  createBookmark(task: BookmarkInput): Event
+  deleteBookmark(taskId: ID): String
+}
